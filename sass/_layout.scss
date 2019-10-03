@@ -1,0 +1,93 @@
+.container {
+  max-width: 120rem; // 100% if smaller than 1200px
+  min-height: 50rem;
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-1);
+  box-shadow: var(--shadow-dark);
+
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .header {
+    display: flex;
+    font-size: 1.4rem;
+    justify-content: space-between;
+    align-items: center;
+    height: 7rem;
+    background-color: #fff;
+    border-bottom: var(--line);
+
+    @media only screen and (max-width: $bp-smallest) {
+      flex-wrap: wrap;
+      align-content: space-around;
+      padding: 4rem 0;
+    }
+  }
+
+  .content {
+    display: flex;
+
+    @media only screen and (max-width: $bp-medium) {
+      flex-direction: column;
+    }
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--color-grey-dark-1);
+    flex: 0 0 18%; // Grow, shrink, basis
+  }
+
+  .hotel-view {
+    background-color: #fff;
+    flex: 1; // Take up as much available space as it can
+  }
+
+  .detail {
+    display: flex;
+    font-size: 1.4rem;
+    padding: 3rem;
+    background-color: var(--color-grey-light-1);
+    border-bottom: var(--line);
+
+    @media only screen and (max-width: $bp-medium) {
+      padding: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column; // They fall into a stack
+    }
+  }
+
+  .description {
+    background-color: fff;
+    flex: 0 0 60%;
+    margin-right: 3rem;
+    padding: 3rem;
+    box-shadow: var(--shadow-light);
+
+    // Largest media query always goes first to prevent order conflicts
+
+    @media only screen and (max-width: $bp-medium) {
+      padding: 2rem;
+      margin-right: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      margin-right: 0;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .user-reviews {
+    display: flex;
+    flex-direction: column; // Aligns button below the review card
+    align-items: center; // Prevents the default stretch on the btn
+    flex: 1;
+  }
+}
